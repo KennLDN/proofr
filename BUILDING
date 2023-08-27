@@ -1,0 +1,15 @@
+Docker v20.10+
+Node v16.20.1+
+
+DEVELOPMENT
+update .env.example to .env, change ENV to dev
+change .env.development in ./frontend to correct port (if changed)
+npm run dev
+
+PRODUCTION
+update .env.example to .env, change ENV to prod
+change .env.production in ./frontend to your URL (reverse proxy will be needed)
+npm run prod
+
+BEFORE PUSHING CHANGES
+npm run pretty

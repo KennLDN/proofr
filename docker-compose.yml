@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:16.20.1-alpine
+    container_name: kprt_server
+    working_dir: /app
+    command: node server.js
+    environment:
+      FRONTEND_PORT: ${FRONTEND_PORT}
+      BACKEND_PORT: ${BACKEND_PORT}
+      ENV: ${ENV}
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+      - "4001:4001"
