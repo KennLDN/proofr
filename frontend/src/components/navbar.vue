@@ -48,7 +48,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="fixed flex items-center top-0 left-0 w-full h-12 bg-base-200 justify-between visible sm:hidden z-20"
+  <div class="fixed select-none flex items-center top-0 left-0 w-full h-12 bg-base-200 justify-between visible sm:hidden z-20"
     @click="toggleNav">
     <div class="flex ml-2 gap-2">
       <img class="h-8" src="/favicon.png">

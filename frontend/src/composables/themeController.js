@@ -6,14 +6,14 @@ export function useThemeController() {
 
   const themeColors = {
     dracula: '#181920',
-    black: '#0d0d0d',
-    emerald: '#ededed'
+    business: '#0f0f0f',
+    garden: '#d8d5d5'
   };
 
   const themeButtons = [
     { theme: 'dracula', icon: 'cloud-moon' },
-    { theme: 'black', icon: 'moon' },
-    { theme: 'emerald', icon: 'sun' }
+    { theme: 'business', icon: 'moon' },
+    { theme: 'garden', icon: 'sun' }
   ];
 
   watch(() => themeStore.getActiveTheme, (newTheme) => {
