@@ -17,7 +17,6 @@ async function fetchArticle(length = "medium") {
         const pageId = Object.keys(pages)[0];
         content = pages[pageId].extract;
 
-        // Check if content length matches the desired threshold
         const [min, max] = thresholds[length];
         if (content.length >= min && content.length <= max) break;
     }

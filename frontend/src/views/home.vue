@@ -20,11 +20,7 @@ export default {
 
         const formatDateTime = (dateStr) => {
             const date = new Date(dateStr);
-
-            // Format the date
             const formattedDate = new Intl.DateTimeFormat().format(date);
-
-            // Format the time without seconds
             const formattedTime = new Intl.DateTimeFormat(undefined, {
                 hour: '2-digit',
                 minute: '2-digit',
@@ -43,9 +39,10 @@ export default {
 </script>
 
 <template>
-    <div class="relative max-w-[640px]">
+    <div class="relative space-y-4 w-[640px]">
+        <RouterLink to="/play"><div class="sm:invisible sm:-mt-[72px] font-mono relative text-center text-secondary-content font-bold p-4 w-full bg-secondary transition hover:bg-secondary-focus">Play Now!</div></RouterLink>
         <div class="relative flex flex-col gap-2 p-4 w-full bg-base-200 h-min">
-            <h2 class="text-xl">Welcome to proofr</h2>
+            <h2 class="text-xl">Welcome to <span class="font-semibold">proofr</span></h2>
             <div class="divider m-0"></div>
             <p class="text-base-content">
                 proofr is a tool for people to improve their proofreading ability.
@@ -59,15 +56,15 @@ export default {
                 error you find to its correct form.
             </p>
             <p class="text-error">
-                This game is in alpha, please expect bugs and missing features!
+                This experience is in alpha, please expect bugs and missing features!
             </p>
         </div>
-        <div class="relative flex flex-col gap-2 p-4 w-full bg-base-200 h-min mt-4">
+        <div class="relative flex flex-col gap-2 p-4 w-full bg-base-200 h-min">
             <h2 class="text-lg">Latest Commits</h2>
             <div class="divider m-0"></div>
             <ul>
                 <li v-for="commit in commits" :key="commit.sha">
-                    <a :href="commit.html_url" target="_blank" rel="noopener noreferrer">
+                    <a class="link" :href="commit.html_url" target="_blank" rel="noopener noreferrer">
                         {{ commit.commit.message }}
                     </a>
                     <small class="block text-neutral">

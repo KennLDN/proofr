@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     image: node:16.20.1-alpine
-    container_name: kprt_server
+    container_name: proofr
     working_dir: /app
     command: node server.js
     environment:
@@ -12,6 +12,9 @@ services:
       ENV: ${ENV}
     volumes:
       - .:/app
-    ports:
-      - "4000:4000"
-      - "4001:4001"
+    networks:
+      - internal
+
+networks:
+  internal:
+    external: true
